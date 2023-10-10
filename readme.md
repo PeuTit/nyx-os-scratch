@@ -18,5 +18,5 @@ nasm -f bin boot.asm -o boot.bin
 ## Run the binary with:
 
 ```
-qemu-system-x86_64 boot.bin
+qemu-system-x86_64 -drive format=raw,file=boot.bin
 ```
