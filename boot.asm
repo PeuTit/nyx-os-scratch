@@ -1,34 +1,18 @@
 mov ah, 0x0e
-mov al, 'F'
+mov al, 65
 int 0x10
 
-mov ah, 0x0e
-mov al, 'U'
-int 0x10
+loop:
+  add al, 32
+  int 0x10
+  sub al, 31
+  cmp al, 'Z' + 1
+  je exit
+  int 0x10
+  jmp loop
 
-mov ah, 0x0e
-mov al, 'C'
-int 0x10
-
-mov ah, 0x0e
-mov al, 'K'
-int 0x10
-
-mov ah, 0x0e
-mov al, ' '
-int 0x10
-
-mov ah, 0x0e
-mov al, 'Y'
-int 0x10
-
-mov ah, 0x0e
-mov al, 'O'
-int 0x10
-
-mov ah, 0x0e
-mov al, 'U'
-int 0x10
+exit:
+  jmp $
 
 jmp $
 
